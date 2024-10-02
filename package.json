@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
     "homepage": "http://360dev-com.github.io/mi_mapa_v1"
   },
   "dependencies": {
