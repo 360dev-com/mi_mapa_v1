@@ -40,7 +40,8 @@ function Cube({
   setDimensions: (index: number, newDimensions: any) => void
 }) {
   const mesh = useRef<THREE.Mesh>(null)
-  const transform = useRef<THREETransformControls>(null)
+  const transform = useRef<any>(null)
+
 
   // Actualiza la escala del cubo cuando cambian las dimensiones
   useEffect(() => {
