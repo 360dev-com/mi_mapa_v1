@@ -5,7 +5,7 @@ import { Canvas, useThree } from '@react-three/fiber'
 import { OrbitControls, TransformControls } from '@react-three/drei'
 import * as THREE from 'three'
 // Importa el tipo TransformControls de three.js
-import { TransformControls as THREETransformControls } from 'three/examples/jsm/controls/TransformControls'
+
 
 const initialColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']
 
