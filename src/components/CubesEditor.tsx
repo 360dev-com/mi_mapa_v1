@@ -4,8 +4,6 @@ import { useState, useRef, useEffect } from 'react'
 import { Canvas, useThree } from '@react-three/fiber'
 import { OrbitControls, TransformControls } from '@react-three/drei'
 import * as THREE from 'three'
-// Importa el tipo TransformControls de three.js
-
 
 const initialColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']
 
@@ -40,8 +38,7 @@ function Cube({
   setDimensions: (index: number, newDimensions: any) => void
 }) {
   const mesh = useRef<THREE.Mesh>(null)
-  const transform = useRef<any>(null)
-
+  const transform = useRef<any>(null) // Usar 'any' temporalmente
 
   // Actualiza la escala del cubo cuando cambian las dimensiones
   useEffect(() => {
@@ -68,10 +65,10 @@ function Cube({
 
   return (
     <>
-      {debugMode && isSelected ? (
+      {debugMode && isSelected && mesh.current ? (
         <TransformControls 
           ref={transform} 
-          object={mesh} 
+          object={mesh.current} // Pasar mesh.current en lugar de mesh
           mode="translate" 
           onDragEnd={handleDragEnd} // Usar onDragEnd en lugar de onChange
           translationSnap={0.1} // Ajusta la sensibilidad del movimiento
@@ -427,6 +424,7 @@ export default function CubesEditor() {
     </div>
   )
 }
+
 
 
 
